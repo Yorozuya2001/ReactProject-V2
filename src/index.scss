@@ -1,7 +1,17 @@
-@use './assets/scss/abstracts/variables';
+@use './scss/abstracts/variables';
 
-@use './assets/scss/abstracts/mixins';
+@use './scss/abstracts/mixins';
 
-@use './assets/scss/base/resets';
+@use './scss/base/resets';
 
-@use './assets/scss/base/base';
+@use './scss/base/base';
+
+@use './scss/abstracts/preloader';
+
+@use './scss/abstracts/header';
+
+@use './scss/abstracts/card';
+
+@use './scss/abstracts/cardDetail';
+
+@use './scss/abstracts/buttonsAddRest.scss';

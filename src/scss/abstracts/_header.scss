@@ -1,0 +1,37 @@
+header{
+    background-color: var(--color-2);
+
+    padding-right: 16px;
+    padding-left: 16px;
+
+    .cart{
+        width: 50px;
+        height: auto;
+    }
+
+    .logoText{
+        font-weight: 600;
+        font-size: 1.2rem;
+        margin-left: 20px;
+    }
+
+    .logo{
+        width: 50px;
+        height: auto;
+        color: white;
+    }
+
+    .divNavBarCollapse{
+        margin-left: 20px;
+    }
+
+    .ul{
+        
+        &__li{
+            &__a{
+                    padding: 0 25px;
+            }
+        }
+    }
+
+}

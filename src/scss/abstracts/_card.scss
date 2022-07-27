@@ -1,0 +1,25 @@
+.card{
+    width: 18rem;
+    border: 2px solid var(--color-4);
+    margin-bottom: 50px;
+}
+
+.imgBorder{
+    border-bottom: 2px solid var(--color-4);
+}
+
+.cardButton{
+    border-radius: 10px;
+    background-color: var(--color-1);
+    color: white;
+    font-weight: 200;
+    padding: 8px 10px;
+}
+
+.priceText{
+    font-weight: 600;
+    font-style: italic;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
