@@ -1,10 +1,20 @@
-import React from 'react'
+import {useState} from 'react'
+import { Link } from 'react-router-dom'
 import ItemCount from '../ItemCount/ItemCount'
 import { onAdd } from '../ItemListContainer/Functions'
 
 
 
 const itemDetail = ({ productoInfo }) => {
+
+const [toCart,setToCart] = useState(true)
+
+    const listen = (cant) =>{
+        onAdd(cant)
+
+        setToCart(false)
+    }
+
     return (
         <div className="cardDetail mb-3">
             <div className="row g-0">
@@ -17,8 +27,12 @@ const itemDetail = ({ productoInfo }) => {
                         <p className="card-text">{productoInfo.descripcion}</p>
                         <p className="DetailPriceText">$ {productoInfo.valor}</p>
                         <div className='d-flex align-items-end'>
-                            <ItemCount initial={1} stock={22} onAdd={onAdd} />
-                        </div>
+                            {toCart?
+                            <ItemCount initial={1} stock={22} onAdd={listen} /> 
+                            :
+                                <Link to="/cart"><button className='buttonConfirm'>Ver el carro de compras</button></Link>
+                            }
+                            </div>
                     </div>
                 </div>
             </div>

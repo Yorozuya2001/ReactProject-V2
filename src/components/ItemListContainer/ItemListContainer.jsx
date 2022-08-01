@@ -15,6 +15,8 @@ const ItemListContainer = ({ greeting }) => {
     const [loading, setLoading] = useState(true)
 
 
+
+
     useEffect(() => {
         if (id) {
             getFetch()
@@ -28,8 +30,8 @@ const ItemListContainer = ({ greeting }) => {
                 .catch(err => console.log(err))
                 .finally(() => setLoading(false))
         }
-
     }, [id])
+
     
     return (
         <>
