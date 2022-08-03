@@ -42,7 +42,6 @@ const ItemListContainer = ({ greeting }) => {
                         loading ? <Preloader /> : <ItemList id={productos} />
                     }
                 </>
-                <ItemCount initial={1} stock={12} onAdd={onAdd} />
             </div>
         </>
     )
