@@ -19,6 +19,7 @@ const CartContextProvider = ({children}) => {
             for (const item in cartList) {
                 if (cartList[item].id === prod.id) {
                     cartList[item].cantidad += prod.cantidad
+                    setCartList([...cartList])
                 }
             }
         } 
@@ -32,11 +33,26 @@ const CartContextProvider = ({children}) => {
         setCartList([])
     }
 
+    const valorTotal = () =>{
+        return cartList.reduce((acumulador,prod) => acumulador += (prod.valor * prod.cantidad), 0)
+    }
+
+    const cantidadTotal = () => {
+        return cartList.reduce((contador, prod) => contador += prod.cantidad, 0)
+    }
+
+    const eliminarProducto = (id) => {
+        setCartList(cartList.filter(prod => prod.id != id))
+    }
+
     return (
         <CartContext.Provider value = {{
             cartList,
             addToCart,
-            removeToCart
+            removeToCart,
+            valorTotal,
+            cantidadTotal,
+            eliminarProducto
         }}>
             {children}
         </CartContext.Provider>

@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useCartContext } from '../../context/cartContext'
 import ItemCount from '../ItemCount/ItemCount'
@@ -8,13 +8,13 @@ import { onAdd } from '../ItemListContainer/Functions'
 
 const itemDetail = ({ productoInfo }) => {
 
-const {addToCart} = useCartContext();
+    const { addToCart } = useCartContext();
 
-const [toCart,setToCart] = useState(true)
+    const [toCart, setToCart] = useState(true)
 
-    const listen = (cant) =>{
+    const listen = (cant) => {
         onAdd(cant)
-        addToCart({...productoInfo,cantidad: cant})
+        addToCart({ ...productoInfo, cantidad: cant })
         setToCart(false)
     }
 
@@ -30,12 +30,17 @@ const [toCart,setToCart] = useState(true)
                         <p className="card-text">{productoInfo.descripcion}</p>
                         <p className="DetailPriceText">$ {productoInfo.valor}</p>
                         <div className='d-flex align-items-end'>
-                            {toCart?
-                            <ItemCount initial={1} stock={22} onAdd={listen} /> 
-                            :
-                                <Link to="/cart"><button className='buttonConfirm'>Ver el carro de compras</button></Link>
+                            {toCart ?
+                                <ItemCount initial={1} stock={22} onAdd={listen} />
+                                :
+                                <div className='d-flex flex-column'>
+                                    <Link to="/cart"><button className='buttonConfirm'>Ver el carro de compras</button></Link>
+                                    <Link to="/">
+                                        <button className="buttonConfirm">Seguir comprando</button>
+                                    </Link>
+                                </div>
                             }
-                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

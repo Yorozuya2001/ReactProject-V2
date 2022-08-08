@@ -1,10 +1,8 @@
 import { useState, useEffect } from 'react'
 import {useParams} from 'react-router-dom'
 import { getFetch } from './Functions'
-import ItemCount from '../ItemCount/ItemCount'
 import ItemList from './ItemList.jsx'
 import Preloader from '../preloader/Preloader'
-import { onAdd } from './Functions'
 
 
 const ItemListContainer = ({ greeting }) => {
