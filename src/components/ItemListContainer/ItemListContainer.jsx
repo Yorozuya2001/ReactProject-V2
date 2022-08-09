@@ -3,33 +3,38 @@ import {useParams} from 'react-router-dom'
 import { getFetch } from './Functions'
 import ItemList from './ItemList.jsx'
 import Preloader from '../preloader/Preloader'
+import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore'
 
 
 const ItemListContainer = ({ greeting }) => {
 
     const { id } = useParams()
-
     const [productos, setProductos] = useState([])
     const [loading, setLoading] = useState(true)
 
 
 
-
-    useEffect(() => {
-        if (id) {
-            getFetch()
-                .then(respuesta => setProductos(respuesta.filter(prod => prod.categoria === id)))
+    useEffect (() => {
+        const db = getFirestore()
+        const queryCollection = collection (db , "items")
+        
+        if (id){
+            const queryFilter = query(queryCollection, where("categoria", "==", id))
+            getDocs(queryFilter)
+                .then(resp => setProductos(resp.docs.map(prod => ({ id: prod.id, ...prod.data() }))))
                 .catch(err => console.log(err))
                 .finally(() => setLoading(false))
         }
         else{
-            getFetch()
-                .then(respuesta => setProductos(respuesta))
+            getDocs(queryCollection)
+                .then(resp => setProductos(resp.docs.map(prod => ({ id: prod.id, ...prod.data() }))))
                 .catch(err => console.log(err))
                 .finally(() => setLoading(false))
         }
-    }, [id])
 
+    },[id])
+
+    console.log(productos);
     
     return (
         <>
