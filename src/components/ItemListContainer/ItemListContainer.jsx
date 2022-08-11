@@ -37,16 +37,16 @@ const ItemListContainer = ({ greeting }) => {
     console.log(productos);
     
     return (
-        <>
-            <div className='d-flex flex-column align-items-center my-5'>
-                <h1>{greeting}</h1>
+        <section className='background-image'>
+            <h1 className='greeting'>{greeting}</h1>
+            <div className='d-flex flex-column align-items-center py-5'>
                 <>
                     {
                         loading ? <Preloader /> : <ItemList id={productos} />
                     }
                 </>
             </div>
-        </>
+        </section>
     )
 }
 

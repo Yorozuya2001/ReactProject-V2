@@ -22,14 +22,14 @@ const itemDetail = ({ productoInfo }) => {
         <div className="cardDetail mb-3">
             <div className="row g-0">
                 <div className="col-md-4">
-                    <img src={productoInfo.imagen} className="img-fluid rounded-start" alt="Imagen pruebas" />
+                    <img src={productoInfo.imagen} className="img-fluid imgDetail rounded-start" alt="Imagen pruebas" />
                 </div>
                 <div className="col-md-8">
                     <div className="card-body">
                         <h5 className="card-title">{productoInfo.titulo}</h5>
                         <p className="card-text">{productoInfo.descripcion}</p>
-                        <p className="DetailPriceText">$ {productoInfo.valor}</p>
-                        <div className='d-flex align-items-end'>
+                        <p className="DetailPriceText">Comprar por $ {productoInfo.valor}</p>
+                        <div className='d-flex flex-column justify-content-end align-items-end'>
                             {toCart ?
                                 <ItemCount initial={1} stock={22} onAdd={listen} />
                                 :

@@ -1,11 +1,25 @@
 .cardDetail{
     max-width: 1600px;
     border-radius: 10px;
-    background-color: var(--color-10);
+    background-color: black;
+    color: white;
+    border: 3px solid black;
 }
 
 .DetailPriceText{
     font-size: 1.8rem;
     font-weight: 700;
     font-style: italic;
+    color: white;
+    text-align: end;
+    margin: 25px 32px;
+}
+
+.backgroundColor{
+    background-color: var(--color-10);
+}
+
+.imgDetail{
+    width: auto;
+    height: 325px;
 }

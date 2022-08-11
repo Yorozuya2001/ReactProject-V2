@@ -1,7 +1,5 @@
 @use './scss/abstracts/variables';
 
-@use './scss/abstracts/mixins';
-
 @use './scss/base/resets';
 
 @use './scss/base/base';
@@ -10,8 +8,14 @@
 
 @use './scss/abstracts/header';
 
+@use './scss/abstracts/introduction';
+
 @use './scss/abstracts/card';
 
 @use './scss/abstracts/cardDetail';
 
 @use './scss/abstracts/buttonsAddRest.scss';
+
+@use './scss/abstracts/infiniteSlider';
+
+@use './scss/abstracts/footer';

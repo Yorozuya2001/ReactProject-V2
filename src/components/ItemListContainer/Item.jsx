@@ -5,7 +5,7 @@ const item = memo(
     ({ producto }) => {
 
         return (
-            <div key={producto.id} className="col-sm-4 d-flex justify-content-center">
+            <div key={producto.id} className="col-md-4 col-xl-3 d-flex justify-content-center">
                 <div className="card">
                     <img src={producto.imagen} className="card-img-top imgBorder" alt="..." />
                     <div className="card-body">

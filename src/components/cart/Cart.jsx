@@ -1,10 +1,46 @@
 import { useCartContext } from "../../context/cartContext"
 import { Link } from "react-router-dom"
+import { addDoc, collection, getFirestore } from "firebase/firestore"
 import { MdDeleteForever } from "react-icons/md";
 
 const Cart = () => {
 
     const { cartList, removeToCart, valorTotal, cantidadTotal, eliminarProducto } = useCartContext()
+
+    //Funcion para guardar Orden
+
+    const user = {
+        name: "Rogelio Rabbit",
+        phone: 1136187810,
+        email: "LocoChelo@gmail.com"
+    }
+
+    const buyed = (e) => {
+        e.preventDefault()
+        const buyer = {
+            buyer: user,
+            items: cartList.map(prod =>{
+                return {
+                    producto: prod.titulo,
+                    id: prod.id,
+                    precio: prod.valor
+                }
+            }),
+            total: valorTotal()
+        }
+        
+    console.log(buyer);
+
+        // Guardar orden en Base de Datos
+
+        const db = getFirestore()
+        const queryOrders = collection(db, "orders")
+        addDoc(queryOrders, buyer)
+            .then(resp => console.log(resp))
+    }
+
+
+
 
     return (
         <div className="d-flex flex-column align-items-center my-5">
@@ -35,7 +71,10 @@ const Cart = () => {
                             </Link>
                         </div>
                         :
+                        <>
                         <button onClick={removeToCart} className="buttonConfirm">Vaciar el carro de compras</button>
+                        <button onClick={buyed} className="buttonConfirm">Confirmar Pedido</button>
+                        </>
                 }
 
             </div>

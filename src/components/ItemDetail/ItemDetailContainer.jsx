@@ -25,7 +25,7 @@ const itemDetailContainer = () => {
     }, [])
 
     return (
-        <div className='d-flex flex-column align-items-center my-5'>
+        <div className=' backgroundColor d-flex flex-column align-items-center py-5'>
             {
                 loading ? <Preloader /> : <ItemDetail productoInfo={producto} />
             }
