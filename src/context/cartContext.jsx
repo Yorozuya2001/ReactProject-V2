@@ -45,6 +45,11 @@ const CartContextProvider = ({children}) => {
         setCartList(cartList.filter(prod => prod.id != id))
     }
 
+    const getDomElement = (id) => {
+        const element = document.getElementById(id)
+        return element.value;
+    }
+
     return (
         <CartContext.Provider value = {{
             cartList,
@@ -52,7 +57,8 @@ const CartContextProvider = ({children}) => {
             removeToCart,
             valorTotal,
             cantidadTotal,
-            eliminarProducto
+            eliminarProducto,
+            getDomElement
         }}>
             {children}
         </CartContext.Provider>

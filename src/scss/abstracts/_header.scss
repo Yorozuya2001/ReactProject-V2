@@ -24,8 +24,10 @@ header{
         font-weight: 600;
         font-size: 1.2rem;
         margin-left: 20px;
+    }
 
-        @include header__576px() {
+    .dissapear{
+            @include header__576px() {
             display: none;
         }
     }

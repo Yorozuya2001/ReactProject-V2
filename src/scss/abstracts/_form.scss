@@ -1,0 +1,63 @@
+.form{
+    background-color: var(--color-3);
+    padding: 16px 16px;
+    margin: 20px;
+    max-width: 720px;
+    border: 3px solid black;
+    border-radius: 10px;
+
+            input{
+        border-radius: 5px;
+        margin-left: 8px;
+        margin-right: 8px;
+        padding-left: 8px;
+        padding-right: 8px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        margin-top: 8px;
+        margin-bottom: 8px;
+        background-color: white;
+        color: black;
+        border: 2px solid black;
+        }
+
+        input::placeholder{
+            color: gray;
+        }
+
+
+    .inputContainer{
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 8px;
+        margin-bottom: 8px;
+
+        .inputWidth300{
+            width: 300px;
+        }
+
+        .inputMax{
+            width: 100%;
+        }
+    }
+
+    .buttonConfirmInForm{
+        border-radius: 10px;
+        background-color: #323232;
+        color: white;
+        font-weight: 200;
+        padding: 8px 10px;
+        margin-top: 10px;
+        min-width: 300px;
+    }
+
+    .buttonConfirmInForm:hover{
+        background-color: black;
+        color: white;
+        transition: all 0.5s;
+    }
+
+}
+
