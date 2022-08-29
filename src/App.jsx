@@ -1,5 +1,4 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
-
 import NavBar from './components/header/NavBar'
 import Footer from './components/footer/footer'
 import './App.scss'

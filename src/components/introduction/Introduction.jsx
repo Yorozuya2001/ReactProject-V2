@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom"
 import SectionImages from "../sections/SectionImages"
 
+//En este componente se encuentra la informacion principal de nuestro home
+
 const Introduction = () => {
     return (
         <>

@@ -12,6 +12,7 @@ const CartContextProvider = ({children}) => {
 
     const [cartList, setCartList] = useState([])
 
+    //añade producto a mi carrito
     const addToCart = (prod) => {
         
         if (cartList.find(item => item.id === prod.id)) 
@@ -29,22 +30,27 @@ const CartContextProvider = ({children}) => {
         }
     }
 
+    //setea la lista de mi carrito eliminando todo el contenido del array
     const removeToCart = () =>{
         setCartList([])
     }
 
-    const valorTotal = () =>{
-        return cartList.reduce((acumulador,prod) => acumulador += (prod.valor * prod.cantidad), 0)
+    //calcula el valor total de nuestro carrito
+    const totalValue = () =>{
+        return cartList.reduce((acum,prod) => acum += (prod.valor * prod.cantidad), 0)
     }
 
-    const cantidadTotal = () => {
-        return cartList.reduce((contador, prod) => contador += prod.cantidad, 0)
+    //cuenta la cantidad de productos en nuestro carrito
+    const cartCont = () => {
+        return cartList.reduce((cont, prod) => cont += prod.cantidad, 0)
     }
 
-    const eliminarProducto = (id) => {
+    //elimina un determinado producto de nuestro carrito
+    const deleteProduct = (id) => {
         setCartList(cartList.filter(prod => prod.id != id))
     }
 
+    //Toma elementos del Dom (especificamente los datos del usuario)
     const getDomElement = (id) => {
         const element = document.getElementById(id)
         return element.value;
@@ -55,9 +61,9 @@ const CartContextProvider = ({children}) => {
             cartList,
             addToCart,
             removeToCart,
-            valorTotal,
-            cantidadTotal,
-            eliminarProducto,
+            totalValue,
+            cartCont,
+            deleteProduct,
             getDomElement
         }}>
             {children}

@@ -1,16 +1,18 @@
 import { useState } from 'react'
 
+//Aqui se encuentra nuestro contador con su respectivo boton de "Agregar al carrito"
+
 const ItemCount = ({ initial, stock, onAdd }) => {
     const [count, setCount] = useState(initial);
-
+    //Añade un item más
     const handleAdd = () => {
         count < stock && setCount(count + 1);
     }
-
+    //Resta un item
     const handleQuit = () => {
         count > 1 && setCount(count - 1);
     }
-
+    //Notifica que el item ha sido añadido al carrito por medio de console.log()
     const handleAddToCart = () => {
         onAdd(count)
     }

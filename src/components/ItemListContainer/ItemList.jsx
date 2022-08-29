@@ -8,7 +8,7 @@ const itemList = memo(
                 <div className="row justify-content-evenly">
                     {
                         id.map(
-                            producto => <Item key={producto.id} producto={producto} />
+                            product => <Item key={product.id} product={product} />
                         )
                     }
                 </div>

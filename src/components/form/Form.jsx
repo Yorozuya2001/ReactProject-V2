@@ -1,6 +1,7 @@
 import { useForm } from "./useForm"
 import Preloader from '../preloader/Preloader'
 
+// valores iniciales de nuestro formulario
 const initialForm = {
     name: "",
     email: "",
@@ -8,6 +9,8 @@ const initialForm = {
     phone: "",
 }
 
+
+// funcion validadora de nuestros campos del formulario haciendo uso de Regex y funciones JS
 const validationsForm = (form) => {
     let errors = {};
     let regexName = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
@@ -46,7 +49,7 @@ const validationsForm = (form) => {
 }
 
 const Form = ({ buyed }) => {
-
+    //obtenemos las funciones del archivo useForm
     const {
         form,
         errors,

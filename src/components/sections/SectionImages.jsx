@@ -1,5 +1,7 @@
 import React from 'react'
 
+//Mostrara las imagenes de los fabricantes en un auto-slider
+
 const SectionImages = () => {
     return (
         <section>

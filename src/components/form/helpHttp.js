@@ -1,3 +1,5 @@
+//Helper obtenido de https://gist.github.com/jonmircha/19a43c5714a398830d6834084f253a0a creditos a jonmircha - Jonathan MirCha
+
 export const helpHttp = () => {
   const customFetch = (endpoint, options) => {
     const defaultHeader = {
